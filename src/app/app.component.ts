@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav, Menu } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { ListingPage } from '../pages/listing/listing';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+
+  @ViewChild(Menu) menuCtrl : Menu;
+  @ViewChild(Nav) navCtrl : Nav;
+
+  homePage = HomePage;
+  listingPage = ListingPage;
+  
   rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -18,5 +26,18 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  openHome() {
+    this.navCtrl.push(this.homePage);
+  }
+
+  closeMenu() {
+    this.menuCtrl.close();
+  }
+
+  listing(id) {
+    this.navCtrl.push(this.listingPage, {id : id});
+  }
+  
 }
 

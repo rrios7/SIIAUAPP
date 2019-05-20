@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title text-center>{{ materia.nombre_materia }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content text-center>
+          <h2>Clave: {{ materia.clave_materia }}</h2>
+          <h2>Nombre: {{ materia.nombre_materia }}</h2>
+          <h2>NRC: {{ materia.nrc }}</h2>
+          <h2>Profesor: {{ materia.profesor }}</h2>
+          <h2>Sección: {{ materia.seccion }}</h2>
+          <h2>Creditos: {{ materia.creditos }}</h2>
+          <h2>Cupos: {{ materia.cupos }}</h2>
+          <h2>Cupos disponibles: {{ materia.cupos_disponibles }}</h2>
+          <h2 *ngFor="let horario of materia.horario">Horario: {{ materia.horario }}</h2>
+          <h2 *ngFor="let dia of materia.dias">Días: {{ dia }}</h2>
+          <h2 *ngFor="let edificio of materia.edificio">Edificio: {{ edificio }}</h2>
+          <h2 *ngFor="let aula of materia.aula">Aula: {{ aula }}</h2>
+          <h2>Ciclo: {{ materia.ciclo }}</h2>
+          <br>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

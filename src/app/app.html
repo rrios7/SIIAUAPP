@@ -1,1 +1,58 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title text-center>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openHome()">
+      <ion-icon name="home" item-start></ion-icon>
+        Inicio
+      </button>
+
+      <button ion-item (click)="listing('glob')">
+          <ion-icon name="globe" item-start></ion-icon>
+          Global
+      </button>
+
+      <button ion-item (click)="listing('igfo')">
+          <ion-icon name="flash" item-start></ion-icon>
+          IGFO
+      </button>
+      
+      <button ion-item (click)="listing('inbi')">
+          <ion-icon name="medical" item-start></ion-icon>
+          INBI
+      </button>
+  
+      <button ion-item (click)="listing('ince')">
+          <ion-icon name="outlet" item-start></ion-icon>
+          INCE
+      </button>
+  
+      <button ion-item (click)="listing('inco')">
+          <ion-icon name="desktop" item-start></ion-icon>
+          INCO
+      </button>
+  
+      <button ion-item (click)="listing('inni')">
+          <ion-icon name="at" item-start></ion-icon>
+          INNI
+      </button>
+  
+      <button ion-item (click)="listing('inro')">
+          <ion-icon name="logo-reddit" item-start></ion-icon>
+          INRO
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+          <ion-icon name="close" item-start></ion-icon>
+          Cerrar Menu
+      </button>
+    </ion-list>
+  </ion-content>
+  
+</ion-menu>
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

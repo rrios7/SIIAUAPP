@@ -1,0 +1,29 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title text-center>Buscar</ion-title>
+  </ion-navbar>
+  <ion-searchbar placehodler="Buscar por materia/profesor" (ionInput)="getItems($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let materia of materias">
+      <ion-icon name="book"></ion-icon>
+      {{ materia.nombre_materia }}
+      <p>{{ materia.profesor }}</p>
+      <p>NRC: {{ materia.nrc }}</p>
+      <p *ngFor="let dia of materia.dias">{{ dia }}</p>
+      <p *ngFor="let horario of materia.horario">{{ horario }}</p>
+      <button ion-button clear item-end  (click)="info(materia)">
+        <ion-icon name="eye" ></ion-icon>
+        Ver
+      </button> 
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -2,5 +2,11 @@
   "name": "Consulta",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/api/",
+      "proxyUrl": "http://127.0.0.1:5000/api/"
+    }
+  ]
 }
